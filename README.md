@@ -2,6 +2,8 @@
 
 This repository contains benchmarks and tests for characterizing the L2 cache coherence behavior on AMD CDNA3 architecture (MI300X).
 
+The GPU is configured to run in SPX mode.
+
 ## Contents
 
 ### Cache Characterization

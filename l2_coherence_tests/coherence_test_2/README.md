@@ -10,6 +10,7 @@ Examines cache coherence behavior by loading from L2 (uses NT bit to bypass L1).
 ## Results
 ```
 root@7:~# ./load_nt
+
 Iterations needed to see value 42 (by XCC):
 
 XCC 0: 38 blocks

@@ -6,8 +6,10 @@ Examines cache coherence behavior when using explicit L2 writeback instruction a
 
 
 ## Results
+```
 root@7:~# ./regular_store_wbl2_nt_load 
 Coherent reads: 304 / Incoherent reads: 0 / Wrong reads : 0
+```
 
 ## Conclusion
 
