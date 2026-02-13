@@ -45,4 +45,4 @@ XCC 7: 38 blocks
 
 ## Conclusion
 
-Regular stores are not written back even when a load with device scope is requested. This is why most of the scoped loads are still fetching stale values. The few that are fetching the updated value are because XCC 6 has finished execution and written back dirty L2 lines.
+Dirty L2 cachelines are not written back even when a load with device scope is requested. The few workgroups in other XCCs that are fetching the updated value are because XCC 6 has finished execution and written back dirty L2 lines (Write-back is triggered by completion of all scheduled workgroups)

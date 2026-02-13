@@ -2,7 +2,7 @@
 
 ## Test Description
 
-Examines cache coherence behavior by loading from L2 (uses NT bit to bypass L1). The test is in two parts:
+Examines cache coherence behavior by loading from L2 (uses NT bit on load to bypass L1). The test is in two parts:
 
 - XCCs keep polling until they see the updated value or until max iterations are completed. Reports the number of iterations it took to observe the updated value.
 - XCCs iterate and load for a fixed number of iterations and report the value they observed.
@@ -76,3 +76,5 @@ In test 1, the workgroup making the store was scheduled on XCC 6. All the CUs on
 All other CUs saw the updated value soon after.
 
 In test 2, the XCC with the updated value was not able to finish execution due to the fixed iterations. Hence, most XCCs observed the stale value. The few blocks on other XCCs seeing updated values are due to the fact that the XCC completed execution and wrote back dirty lines while a few workgroups were still busy.
+
+Hence, regular stores don't trigger snoop filters and L2 is not kept coherent for regular stores.
