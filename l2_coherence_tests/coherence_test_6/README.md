@@ -13,6 +13,6 @@ Total CUs: 304
 ```
 
 ## Conclusion
-> The buffer invalidate did not invalidate the L2 cacheline containing the updated value, nor did it writeback the dirty L2 line containing the updated value.
+The buffer invalidate did not invalidate the L2 cacheline containing the updated value, nor did it writeback the dirty L2 line containing the updated value. Hence we see 38 workgroups (38 CUs on one XCD) reading the updated value, while the remaining read the stale value of their respective L2 caches.
 
-> Hence, buffer invalidate is only applicable for non-local memory cachelines.
+Hence, buffer invalidate is only applicable for non-local memory cachelines.
